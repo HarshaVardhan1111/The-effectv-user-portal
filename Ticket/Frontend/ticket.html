@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Tracker</title>
+    <link rel="icon" href="C:\Users\hsubra154\Desktop\Git\Ticket\Images\Logo3.png">
+    <link rel="stylesheet" href="ticket.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="ticket.html"><i class="fas fa-ticket-alt"></i> Manage Ticket</a></li>
+                <li>
+                    <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+                    <ul class="submenu">
+                        <li><a href="stats.html">Stats</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="leaves.html">Leaves</a></li>
+                        <li><a href="performance.html">Performance</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="achievement.html">Achievement</a></li>
+                        <!-- Other submenu items -->
+                    </ul>
+                </li>
+                <li><a href="supervisor-view.html"><i class="fas fa-user-tie"></i> Supervisor View</a></li>
+                <li class="user-profile">
+                <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+                </li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <!-- Other navigation items -->
+            </ul>
+        </nav>
+    </header>
+    <div class="ticket-container">
+        <h1>Ticket Tracker</h1>
+        <div id="main-menu">
+            <button onclick="showPage('ad-copy-qc')">Ad Copy Upload & QC</button>
+            <button onclick="showPage('roe-dr-oe')">ROE & DR, OE</button>
+        </div>
+    </div>
+    
+        <div id="ad-copy-qc" class="hidden">
+            <h2>Ad Copy Upload & QC</h2>
+            <label for="ticket-number">Ticket Number:</label>
+            <input type="text" id="ticket-number" required>
+            <label for="total-order">Total Order:</label>
+            <input type="number" id="total-order" required>
+            <label for="select-option">Select Option:</label>
+            <select id="select-option" required>
+                <option value="national-uploads">National Uploads</option>
+                <option value="retail-uploads">Retail Uploads</option>
+                <option value="national-qc">National QC</option>
+                <option value="retail-qc">Retail QC</option>
+                <option value="enterprise-uploads">Enterprise Uploads</option>
+                <option value="enterprise-qc">Enterprise QC</option>
+            </select>
+            <button onclick="startTimer()">Start Timer</button>
+            <button onclick="stopTimer()">Stop Timer</button>
+            <span id="timer">00:00</span>
+            <button onclick="nextStep()">Next Step</button>
+            <div id="high-value-client" class="hidden">
+                <button onclick="notifyHighValueClient()">🔔 High Value Client</button>
+            </div>
+        </div>
+    
+        <div id="ticket-details" class="hidden">
+            <!-- The details form will be injected here based on selection -->
+        </div>
+    
+    
+    <script src="ticket.js"></script>
+    <script src="home.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    // Function to show submenu
+    function showSubmenu(event) {
+        const submenu = event.currentTarget.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = 'block';
+        }
+    }
+
+    // Function to hide submenu
+    function hideSubmenu(event) {
+        const submenu = event.currentTarget.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = 'none';
+        }
+    }
+
+    const navItems = document.querySelectorAll('nav ul li');
+
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', showSubmenu);
+        item.addEventListener('mouseleave', hideSubmenu);
+    });
+});
+    </script>
+       <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const redirectButton = document.querySelector('nav ul li a[href="process.html"]');
+        if (redirectButton) {
+        redirectButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'process.html';
+        });
+    }
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="stats.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'stats.html';
+    });
+}
+});
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="attendance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'attendance.html';
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="leave.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'leave.html'; 
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="performance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'performance.html'; 
+    });
+}
+});
+
+</script>
+</body>
+</html>

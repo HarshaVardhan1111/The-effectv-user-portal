@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Page</title>
+    <link rel="stylesheet" href="performance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="ticket.html"><i class="fas fa-ticket-alt"></i> Manage Ticket</a></li>
+                <li>
+                    <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+                    <ul class="submenu">
+                        <li><a href="stats.html">Stats</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="leave.html">Leaves</a></li>
+                        <li><a href="performance.html">Performance</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="achievement.html">Achievement</a></li>
+                    </ul>
+                </li>
+                <li><a href="supervisor-view.html"><i class="fas fa-user-tie"></i> Supervisor View</a></li>
+                <li class="user-profile">
+                    <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+                </li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="navbar">
+        <h1>Performance</h1>
+        <ul>
+            <li><a href="#" class="nav-link" data-target="skills">Skills</a></li>
+            <li><a href="#" class="nav-link" data-target="performanceReview">Performance Review</a></li>
+            <li><a href="#" class="nav-link" data-target="performanceGoal">Performance Goal</a></li>
+            <li><a href="#" class="nav-link" data-target="careerGrowth">Career Growth</a></li>
+            <li><a href="#" class="nav-link" data-target="behaviorDetail">Behavior Detail</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div id="skills" class="section">
+            <h2>Skills</h2>
+            <ul id="skillList"></ul>
+            <button id="editSkillBtn">Edit Skills</button>
+            <input type="text" id="skillInput" placeholder="Add a new skill" style="display: none;">
+            <button id="addSkillBtn" style="display: none;">Add Skill</button>
+        </div>        
+        
+        <div id="performanceReview" class="section" style="display: none;">
+            <h2>Performance Review</h2>
+            <table id="reviewTable">
+                <thead>
+                    <tr>
+                        <th>Completed Review</th>
+                        <th>Review Period Start Date</th>
+                        <th>Review Period End Date</th>
+                        <th>Manager Rating</th>
+                        <th>View Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Reviews will be populated here -->
+                </tbody>
+            </table>
+            <button id="createPdfBtn">Create Review PDF</button>
+        </div>
+
+        <div id="performanceGoal" class="section" style="display: none;">
+            <h2>Performance Goal</h2>
+            <input type="text" id="goalInput" placeholder="Create a performance goal">
+            <button id="addGoalBtn">Add Goal</button>
+            <ul id="goalList"></ul>
+        </div>
+    </div>
+
+    <script src="performance.js"></script>
+    <script src="home.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    // Function to show submenu
+    function showSubmenu(event) {
+        const submenu = event.currentTarget.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = 'block';
+        }
+    }
+
+    // Function to hide submenu
+    function hideSubmenu(event) {
+        const submenu = event.currentTarget.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = 'none';
+        }
+    }
+
+    // Get all navigation items with submenus
+    const navItems = document.querySelectorAll('nav ul li');
+
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', showSubmenu);
+        item.addEventListener('mouseleave', hideSubmenu);
+    });
+});
+    </script>
+       <script>
+        // Wait until the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+        const redirectButton = document.querySelector('nav ul li a[href="process.html"]');
+        if (redirectButton) {
+        redirectButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'process.html';
+        });
+    }
+});
+</script>
+<script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="attendance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'attendance.html';
+    });
+}
+});
+
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="leave.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'leave.html'; 
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="stats.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'stats.html'; 
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="performance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'performance.html'; 
+    });
+}
+});
+
+</script>
+</body>
+</html>

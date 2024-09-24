@@ -1,0 +1,107 @@
+/* General Body Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6f8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-image: linear-gradient(to right, #e6eff6, #cfd8e1);  */
+}
+
+/* Login and Forgot Password Page Container */
+#login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Form Styles */
+#login-form, #forgot-password-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+#login-form h1, #forgot-password-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#login-form input, #forgot-password-form input {
+    margin: 10px 0;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+}
+
+#login-form input:focus, #forgot-password-form input:focus {
+    border-color: #0076d6;
+    outline: none;
+}
+
+#login-form button, #forgot-password-form button {
+    padding: 12px;
+    background-color: #0076d6; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#login-form button:hover, #forgot-password-form button:hover {
+    background-color: #005bb5; 
+}
+
+/* Link Styles */
+#forgot-password-link, #back-to-login {
+    display: block;
+    margin-top: 15px;
+    color: #0076d6; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#forgot-password-link:hover, #back-to-login:hover {
+    color: #005bb5; 
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #login-page {
+        padding: 15px;
+    }
+
+    #login-form, #forgot-password-form {
+        padding: 15px;
+    }
+
+    #login-form h1, #forgot-password-form h1 {
+        font-size: 20px;
+    }
+
+    #login-form button, #forgot-password-form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

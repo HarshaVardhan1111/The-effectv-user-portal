@@ -1,0 +1,235 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    display: flex;
+}
+header {
+    width: 100%;
+    background-color: #ffffff; 
+    color: #333;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+}
+
+nav ul li {
+    margin: 0;
+    position: relative;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+/* Submenu Styles */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    border-radius: 4px;
+    min-width: 180px;
+    z-index: 1000;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu li a:hover {
+    background-color: #f1f3f5;
+    color: #0073e6;
+}
+
+/* Show submenu on hover */
+nav ul li:hover .submenu {
+    display: block;
+}
+
+
+.navbar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    width: 250px; /* Fixed width for navbar */
+    height: 100vh; /* Full height */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s; /* Smooth width transition */
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 15px 0; /* Spacing between links */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block; /* Full width clickable area */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.navbar a:hover {
+    background-color: #34495e; /* Darker shade on hover */
+}
+
+.container {
+    flex: 1; /* Take remaining space */
+    padding: 100px;
+    margin-left: 20px; /* Space between navbar and content */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #dcdcdc; /* Light border for sections */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+input {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    width: calc(100% - 120px); /* Responsive input width */
+}
+
+#skills {
+    border: 1px solid #dcdcdc; /* Light border around skills section */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding around the content */
+    background-color: #f9f9f9; /* Light background for the box */
+}
+
+#skillList {
+    list-style-type: none; /* Remove bullets from the list */
+    padding: 0; /* Remove padding from the list */
+    margin: 0; /* Remove margin from the list */
+}
+
+#skillList li {
+    padding: 10px; /* Padding for each skill item */
+    border-bottom: 1px solid #dcdcdc; /* Divider between skills */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between skill text and remove button */
+}
+
+#skillList li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #3498db; /* Change background on hover */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+td:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        height: auto;
+        position: static; /* Navbar will be above content on smaller screens */
+    }
+
+    .container {
+        margin-left: 0; /* Remove left margin */
+    }
+}

@@ -1,0 +1,296 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa; /* Soft light background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    width: 100%;
+    background-color: #ffffff; 
+    color: #333;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+}
+
+nav ul li {
+    margin: 0;
+    position: relative;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+/* Submenu Styles */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    border-radius: 4px;
+    min-width: 180px;
+    z-index: 1000;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu li a:hover {
+    background-color: #f1f3f5;
+    color: #0073e6;
+}
+
+/* Show submenu on hover */
+nav ul li:hover .submenu {
+    display: block;
+}
+/* Main Container */
+.container {
+    max-width: 1200px; /* Set a maximum width */
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Darker, more professional gray */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Content Layout */
+.content {
+    display: flex; /* Use flexbox for layout */
+    gap: 20px; /* Space between sections */
+}
+
+/* Sections Styles */
+.form-section {
+    background: #f1f1f1; /* Background for the form section */
+    padding: 20px; /* Ensure there is padding around the content */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-bottom: 20px; /* Space below the form section */
+}
+
+
+.form-section, .history-section {
+    flex: 1; /* Allow both sections to grow equally */
+    min-width: 300px; /* Minimum width to avoid too small sections */
+    background: #f1f1f1; /* Background for clarity */
+    padding: 15px; /* Padding for sections */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Balance Display */
+.balance-container {
+    margin-bottom: 20px; /* Space below the balance display */
+}
+
+/* Subheading Styles */
+h2 {
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+/* Label Styles */
+label {
+    display: block; /* Ensure labels take full width */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #495057; /* Label color */
+    font-weight: bold; /* Bold labels */
+}
+/* Input and Select Styles */
+input, select {
+    width: 90%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ced4da; /* Input border */
+    border-radius: 4px; /* Rounded corners for inputs */
+    font-size: 14px; /* Font size for inputs */
+}
+
+/* Focus Styles */
+input:focus, select:focus {
+    border-color: #80bdff; /* Border color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button Styles */
+button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for the button */
+    background-color: #007bff; /* Button background */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Font size for button */
+    cursor: pointer; /* Pointer on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+
+/* Response Message Styles */
+#responseMessage {
+    margin-top: 10px; /* Space above the response message */
+    padding: 10px; /* Padding inside the message */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #d4edda; /* Background color for success message */
+    color: #155724; /* Text color for success message */
+    border: 1px solid #c3e6cb; /* Border for success message */
+    text-align: center; /* Center the message */
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    padding: 10px; /* Add padding around the table */
+    border-radius: 5px; /* Rounded corners for the container */
+    background-color: #ffffff; /* White background for contrast */
+}
+
+#leaveHistory, #approvedLeaveHistory {
+    width: 100%; /* Ensure table takes full width */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+}
+
+#leaveHistory th, #leaveHistory td,#approvedLeaveHistory th, #approvedLeaveHistory td {
+    border: 1px solid #ced4da; /* Border for table cells */
+    padding: 8px; /* Padding inside each cell */
+    text-align: center; /* Center-align text in cells */
+}
+
+#leaveHistory th, #approvedLeaveHistory th {
+    background-color: #007bff; /* Header background color */
+    color: white; /* Header text color */
+}
+
+#leaveHistory tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+#approvedLeaveHistory tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+
+#leaveHistory tr:hover {
+    background-color: #e9ecef; /* Hover effect for rows */
+}
+#approvedLeaveHistory tr:hover {
+    background-color: #e9ecef; /* Hover effect for rows */
+}
+
+/* Utility Class */
+.hidden {
+    display: none;
+}
+
+/* Tab Styles */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab {
+    padding: 8px 10px; /* Smaller padding */
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px; /* Smaller border radius */
+    cursor: pointer;
+}
+
+.tab:hover {
+    background-color: #0056b3;
+}
+.table-container {
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    padding: 15px; /* Add padding around the table */
+    border-radius: 5px; /* Rounded corners for the container */
+    background-color: #ffffff; /* White background for contrast */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    margin-bottom: 20px; /* Space below the container */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px; /* Reduced padding on small screens */
+    }
+
+    input, select {
+        font-size: 12px; /* Smaller font size */
+    }
+
+    button, .tab {
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .content {
+        flex-direction: column; /* Stack sections vertically on small screens */
+    }
+}

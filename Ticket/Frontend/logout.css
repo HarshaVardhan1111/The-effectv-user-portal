@@ -1,0 +1,26 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6f8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #e6eff6, #cfd8e1); 
+}
+#logout-link, button {
+    padding: 12px;
+    background-color: #0076d6; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+#logout-link button:hover {
+    background-color: #005bb5; 
+}

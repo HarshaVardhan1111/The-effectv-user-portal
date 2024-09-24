@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="icon" href="C:\Users\hsubra154\Desktop\Git\Ticket\Images\Logo3.png">
+    <link rel="stylesheet" href="logout.css">
+</head>
+<body>
+    <div class="logout-container">
+        <h1>You have been logged out.</h1>
+        <button onclick="location.href='login.html'" id="logoutButton">Logout</button>
+    </div>
+</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const timerDisplay = document.getElementById('timer');
+    const logoutButton = document.getElementById('logoutButton');
+    const startTimeKey = 'timerStartTime';
+    let timerInterval;
+
+    function initializeStartTime() {
+        let storedStartTime = localStorage.getItem(startTimeKey);
+        if (!storedStartTime) {
+            storedStartTime = new Date().getTime();
+            localStorage.setItem(startTimeKey, storedStartTime);
+        }
+        return parseInt(storedStartTime, 10);
+    }
+
+    function resetStartTime() {
+        localStorage.removeItem(startTimeKey);
+    }
+
+    const startTime = initializeStartTime();
+
+    function formatTime(ms) {
+        const seconds = Math.floor(ms / 1000);
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        const elapsed = now - startTime;
+        timerDisplay.textContent = formatTime(elapsed);
+    }
+
+    function startTimer() {
+        timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+    }
+
+    function handleLogout() {
+        stopTimer();
+        resetStartTime();
+        alert('Logged out and timer stopped');
+        // Redirect to login or other page if needed
+        // window.location.href = 'login.html'; // Example
+    }
+
+    startTimer();
+    logoutButton.addEventListener('click', handleLogout);
+});
+
+</Script>
+</html>

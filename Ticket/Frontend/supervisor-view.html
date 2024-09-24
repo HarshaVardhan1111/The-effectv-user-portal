@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Dashboard</title>
+    <link rel="icon" href="C:\Users\hsubra154\Desktop\Git\Ticket\Images\Logo3.png">
+    <link rel="stylesheet" href="supervisor-view.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="ticket.html"><i class="fas fa-ticket-alt"></i> Manage Ticket</a></li>
+                <li>
+                    <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+                    <ul class="submenu">
+                        <li><a href="stats.html">Stats</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="leaves.html">Leaves</a></li>
+                        <li><a href="performance.html">Performance</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="achievement.html">Achievement</a></li>
+                        <!-- Other submenu items -->
+                    </ul>
+                </li>
+                <li>
+                        <a href="#"><i class="fas fa-user-tie"></i> Supervisor View</a>
+                        <ul class="submenu">
+                            <li><a href="statsauto.html">Stats Auto Tool</a></li>
+                            <li><a href="supervisor-view.html">Supervisor Chart</a></li>
+                        </ul>
+                    </li>
+                <li class="user-profile">
+                <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+                </li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <!-- Other navigation items -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Data Insights Dashboard</h1>
+        <input type="file" id="fileInput" accept=".xlsx, .xls" />
+        <button id="uploadButton">Upload</button>
+        <select id="sheetSelect" style="display: none;"></select>
+        <button id="viewButton" style="display: none;">View Visualizations</button>
+        
+        <input type="text" id="searchInput" placeholder="Search for details..." />
+        
+        <div id="charts" class="charts"></div>
+    </div>
+    <footer>
+        <p>&copy; effectv Users. All rights reserved.</p>
+    </footer>
+    <script src="supervisor-view.js"></script>
+    <script>
+        mermaid.initialize({startOnLoad:true});
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const statsAutotool = document.querySelector('nav ul li a[href="statsauto.html"]');
+    if (statsAutotool) {
+        statsAutotool.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'statsauto.html'; 
+        });
+    }
+});
+    </script>
+    <script src="home.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    // Function to show submenu
+    function showSubmenu(event) {
+        const submenu = event.currentTarget.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = 'block';
+        }
+    }
+
+    // Function to hide submenu
+    function hideSubmenu(event) {
+        const submenu = event.currentTarget.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = 'none';
+        }
+    }
+
+
+    const navItems = document.querySelectorAll('nav ul li');
+
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', showSubmenu);
+        item.addEventListener('mouseleave', hideSubmenu);
+    });
+});
+    </script>
+       <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const redirectButton = document.querySelector('nav ul li a[href="process.html"]');
+        if (redirectButton) {
+        redirectButton.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            window.location.href = 'process.html'; 
+        });
+    }
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="attendance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'attendance.html';
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="leave.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'leave.html'; 
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="performance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'performance.html'; 
+    });
+}
+});
+
+</script>
+</body>
+</html>

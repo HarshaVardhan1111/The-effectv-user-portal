@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Request Approval</title>
+    <link rel="stylesheet" href="leave.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="ticket.html"><i class="fas fa-ticket-alt"></i> Manage Ticket</a></li>
+                <li>
+                    <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+                    <ul class="submenu">
+                        <li><a href="stats.html">Stats</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="leave.html">Leaves</a></li>
+                        <li><a href="performance.html">Performance</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="achievement.html">Achievement</a></li>
+                    </ul>
+                </li>
+                <li><a href="supervisor-view.html"><i class="fas fa-user-tie"></i> Supervisor View</a></li>
+                <li class="user-profile">
+                    <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+                </li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Leave Management</h1>
+        <div class="content">
+            <div class="form-section">
+                <h2>Leave Request Form</h2>
+                <form id="leaveForm">
+                    <div class="form-group">
+                        <label for="employeeId">Employee ID:</label>
+                        <input type="text" id="employeeId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeName">Employee Name:</label>
+                        <input type="text" id="employeeName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaveType">Leave Type:</label>
+                        <select id="leaveType" required>
+                            <option value="sick">Sick Leave</option>
+                            <option value="casual">Casual Leave</option>
+                            <option value="earned">Earned Leave</option>
+                            <option value="compOff">Comp Off</option>
+                        </select>                        
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">From:</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">To:</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Reason:</label>
+                        <input type="text" id="reason" required>
+                    </div>
+                    <button type="submit">Submit Request <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <div id="responseMessage" class="hidden"></div>
+            </div>
+            
+
+            <div class="history-section">
+                <div class="leave-balance-section">
+                    <h2>Leave Balances</h2>
+                    <p><strong>Sick Leave Balance:</strong> <span id="sickLeaveBalance">5 Days</span></p>
+                    <p><strong>Casual Leave Balance:</strong> <span id="casualLeaveBalance">4 Days</span></p>
+                    <p><strong>Comp Off Balance:</strong> <span id="compOffBalance">2 Days</span></p>
+                    <p><strong>Earned Leave Balance:</strong> <span id="earnedLeaveBalance">3 Days</span></p>
+                </div>
+                <button id="approveButton">Approve Leave Requests</button>
+
+
+                <h2>Leave History</h2>
+<div class="table-container">
+    <table id="leaveHistory">
+        <thead>
+            <tr>
+                <th>Applied Date</th>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Leave Type</th>
+                <th>No. of Days</th>
+                <th>Reason</th>
+                <th>Action By</th>
+                <th>Application Status</th>
+            </tr>
+        </thead>
+        <tbody id="historyTableBody">
+            <!-- Pending leave requests -->
+        </tbody>
+    </table>
+</div>
+
+<h2>Approved Leave Requests</h2>
+<div class="table-container">
+    <table id="approvedLeaveHistory">
+        <thead>
+            <tr>
+                <th>Applied Date</th>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Leave Type</th>
+                <th>No. of Days</th>
+                <th>Reason</th>
+                <th>Action By</th>
+                <th>Application Status</th>
+            </tr>
+        </thead>
+        <tbody id="approvedHistoryTableBody">
+            <!-- Approved leave requests -->
+        </tbody>
+    </table>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab" id="tab1">Tab 1</button>
+            <button class="tab" id="tab2">Tab 2</button>
+            <button class="tab" id="tab3">Tab 3</button>
+        </div>
+    </div>
+
+    <script src="leave.js"></script>
+    <script src="home.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    // Function to show submenu
+    function showSubmenu(event) {
+        const submenu = event.currentTarget.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = 'block';
+        }
+    }
+
+    // Function to hide submenu
+    function hideSubmenu(event) {
+        const submenu = event.currentTarget.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = 'none';
+        }
+    }
+
+    // Get all navigation items with submenus
+    const navItems = document.querySelectorAll('nav ul li');
+
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', showSubmenu);
+        item.addEventListener('mouseleave', hideSubmenu);
+    });
+});
+    </script>
+       <script>
+        // Wait until the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+        const redirectButton = document.querySelector('nav ul li a[href="process.html"]');
+        if (redirectButton) {
+        redirectButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'process.html';
+        });
+    }
+});
+</script>
+<script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="attendance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'attendance.html';
+    });
+}
+});
+
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="leave.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'leave.html'; 
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="stats.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'stats.html'; 
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="performance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'performance.html'; 
+    });
+}
+});
+
+</script>
+</body>
+</html>

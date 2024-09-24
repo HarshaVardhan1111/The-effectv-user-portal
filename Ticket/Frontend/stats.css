@@ -1,0 +1,239 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa; /* Soft light background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: #ffffff; 
+    color: #333;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+}
+
+nav ul li {
+    margin: 0;
+    position: relative;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+/* Submenu Styles */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    border-radius: 4px;
+    min-width: 180px;
+    z-index: 1000;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu li a:hover {
+    background-color: #f1f3f5;
+    color: #0073e6;
+}
+
+/* Show submenu on hover */
+nav ul li:hover .submenu {
+    display: block;
+}
+
+
+/* Stats Background and Content Styles */
+.stats-background {
+    padding-top: 80px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); 
+}
+
+.stats-content {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+/* Title Styles */
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Darker, more professional gray */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Upload and Select Container */
+.upload-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Input and Select Styles */
+input[type="file"], 
+select {
+    flex: 1; 
+    padding: 10px;
+    margin-right: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s; 
+}
+
+input[type="file"]:hover, 
+select:hover {
+    border-color: #007bff; 
+}
+
+input[type="file"]:focus, 
+select:focus {
+    outline: none;
+    border-color: #007bff; 
+}
+
+/* Styles for Load Data Button */
+button {
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #0056b3; 
+}
+
+/* Stats Table Styles */
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.stats-table th, .stats-table td {
+    border: 1px solid #e0e0e0;
+    padding: 12px; 
+    text-align: center;
+    font-size: 0.9rem; 
+}
+
+.stats-table th {
+    background-color: #007bff; 
+    color: white;
+    font-weight: bold;
+}
+
+.stats-table td {
+    background-color: #ffffff;
+    transition: background-color 0.3s; 
+}
+
+.stats-table td:hover {
+    background-color: #f8f8f8; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .stats-content {
+        padding: 20px; 
+    }
+
+    h1 {
+        font-size: 2rem; 
+    }
+
+    .stats-table th, .stats-table td {
+        padding: 10px; 
+    }
+
+    .upload-container {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    input[type="file"], select {
+        margin-right: 0; 
+        margin-bottom: 10px; 
+        width: 100%; 
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ffffff; 
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; 
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}

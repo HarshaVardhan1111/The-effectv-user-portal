@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="icon" href="C:\Users\hsubra154\Desktop\Git\Ticket\Images\Logo3.png">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="ticket.html"><i class="fas fa-ticket-alt"></i> Manage Ticket</a></li>
+                <li>
+                    <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+                    <ul class="submenu">
+                        <li><a href="stats.html">Stats</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="leave.html">Leaves</a></li>
+                        <li><a href="performance.html">Performance</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="achievement.html">Achievement</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-user-tie"></i> Supervisor View</a>
+                    <ul class="submenu">
+                        <li><a href="statsauto.html">Stats Auto Tool</a></li>
+                        <li><a href="supervisor-view.html">Supervisor Chart</a></li>
+                    </ul>
+                </li>
+                <li class="user-profile">
+                    <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+                </li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="profile-container">
+        <div class="profile-card">
+            <h1>Profile</h1>
+            <div class="profile-photo">
+                <img id="profileImage" src="default-profile.png" alt="Profile Photo">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" id="profilePhotoInput" accept="image/*">
+                    <button type="submit" class="upload-btn">Upload Photo</button>
+                </form>
+            </div>
+            <div class="profile-details">
+                <p><strong>Name:</strong> <span id="userName">Loading...</span></p>
+                <p><strong>Employee ID:</strong> <span id="employeeId">Loading...</span></p>
+                <p><strong>Email ID:</strong> <span id="emailId">Loading...</span></p>
+                <p><strong>Date of Birth:</strong> <span id="dob">Loading...</span></p>
+                <p><strong>Date of Joining:</strong> <span id="doj">Loading...</span></p>
+                <p><strong>Years of Experience:</strong> <span id="experience">Loading...</span></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; effectv Users. All rights reserved.</p>
+    </footer>
+    <script src="profile.js"></script>
+</body>
+</html>

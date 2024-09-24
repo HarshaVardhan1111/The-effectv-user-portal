@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process</title>
+    <link rel="icon" href="C:\Users\hsubra154\Desktop\Git\Ticket\Images\Logo3.png">
+    <link rel="stylesheet" href="process.css">
+    <<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="ticket.html"><i class="fas fa-ticket-alt"></i> Manage Ticket</a></li>
+                <li>
+                    <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+                    <ul class="submenu">
+                        <li><a href="stats.html">Stats</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="leaves.html">Leaves</a></li>
+                        <li><a href="performance.html">Performance</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="achievement.html">Achievement</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-user-tie"></i> Supervisor View</a>
+                    <ul class="submenu">
+                        <li><a href="statsauto.html">Stats Auto Tool</a></li>
+                        <li><a href="supervisor-view.html">Supervisor Chart</a></li>
+                    </ul>
+                </li>
+                <li class="user-profile">
+                    <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+                </li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="process-container">
+        <h1>Process</h1>
+        <div id="pmain-menu">
+            <button onclick="showPage('ad-copy-qc')">Ad Copy Upload & QC</button>
+            <button onclick="showPage('roe-dr-oe')">ROE & DR, OE</button>
+        </div>
+    </div>
+    <div id="ad-copy-qc" class="hidden">
+        <h2>Ad Copy Upload & QC</h2>
+            <ul class="process-list">
+                <li><a href="#ad-copy-qc">Ad Copy QC</a></li>
+                <li><a href="#retail-ad-copy-qc">Retail Ad Copy QC</a></li>
+                <li><a href="#national-uploads">National Uploads</a></li>
+                <li><a href="#retail-uploads">Retail Uploads</a></li>
+                <li><a href="#enterprise-qc">Enterprise QC</a></li>
+                <li><a href="#enterprise-uploads">Enterprise Uploads</a></li>
+            </ul>
+    </div>
+    <div id="roe-dr-oe" class="hidden">
+        <h2>ROE & DR, OE</h2>
+        <ul class="process-list">
+        <li><a href="#amp-dr">AMP DR</a></li>
+        <li><a href="#amp-oe">AMP OE</a></li>
+        <li><a href="#retail-order-entry">Retail Order Entry (ROE)</a></li>
+        <li><a href="#qar">QAR</a></li>
+        <li><a href="#make-goods">Make Goods</a></li>
+        <li><a href="#political-order-entry">Political Order Entry</a></li>
+        <li><a href="#full-fillment">Full Fillment</a></li></div>
+        </ul>
+        
+    </div>
+    <!-- <footer>
+        <p>&copy; effectv Users. All rights reserved.</p>
+    </footer> -->
+    <script>
+    function showPage(pageId) {
+        document.querySelectorAll('div[id]').forEach(div => div.classList.add('hidden'));
+        document.getElementById(pageId).classList.remove('hidden');
+    }
+    </script>
+    <script>
+        // Select the "Attendance" link in the navigation menu
+        document.addEventListener('DOMContentLoaded', () => {
+        const redirectButton2 = document.querySelector('nav ul li a[href="performance.html"]');
+        if (redirectButton2) {
+        redirectButton2.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            window.location.href = 'performance.html'; 
+        });
+    }
+    });
+    
+    </script>
+</body>
+</html>

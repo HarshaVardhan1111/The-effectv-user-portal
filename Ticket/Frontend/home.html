@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="C:\Users\hsubra154\Desktop\Git\Ticket\Images\Logo3.png">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style></style>
+</head>
+<body background="C:\Users\hsubra154\Desktop\Git\Ticket\Images\Shot_40.webp" class="body1">
+    <div class="home-background">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="ticket.html"><i class="fas fa-ticket-alt"></i> Manage Ticket</a></li>
+                    <li>
+                        <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+                        <ul class="submenu">
+                            <li><a href="stats.html">Stats</a></li>
+                            <li><a href="attendance.html">Attendance</a></li>
+                            <li><a href="leave.html">Leaves</a></li>
+                            <li><a href="performance.html">Performance</a></li>
+                            <li><a href="process.html">Process</a></li>
+                            <li><a href="achievement.html">Achievement</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-user-tie"></i> Supervisor View</a>
+                        <ul class="submenu">
+                            <li><a href="statsauto.html">Stats Auto Tool</a></li>
+                            <li><a href="supervisor-view.html">Supervisor Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="user-profile">
+                        <a href="profile.html"><i class="fas fa-user"></i> User Profile</a>
+                    </li>
+                    <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    <li class="user-status">
+                        <div id="status-indicator" class="status-indicator available"></div>
+                        <div class="status-dropdown">
+                            <button id="status-button" class="status-button">
+                                <i id="status-icon" class="fas fa-circle status-icon available"></i>
+                                Available
+                            </button>
+                            <div id="status-menu" class="status-menu">
+                                <div data-status="available" class="status-option">
+                                    <i class="fas fa-circle status-icon available"></i> Available
+                                </div>
+                                <div data-status="away" class="status-option">
+                                    <i class="fas fa-circle status-icon away"></i> Away
+                                </div>
+                                <div data-status="busy" class="status-option">
+                                    <i class="fas fa-circle status-icon busy"></i> Busy
+                                </div>
+                                <div data-status="do-not-disturb" class="status-option">
+                                    <i class="fas fa-circle status-icon do-not-disturb"></i> Do Not Disturb
+                                </div>
+                                <div data-status="offline" class="status-option">
+                                    <i class="fas fa-circle status-icon offline"></i> Offline
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main-content">
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('links')">Links</button>
+                <button class="tab-button" onclick="openTab('updates')">Updates</button>
+                <button class="tab-button" onclick="openTab('syscodes')">Master Syscode</button>
+            </div>
+            <div id="links" class="tab-content">
+                <h2>Links</h2>
+                <div class="links-container">
+                    <div class="links-section">
+                        <h3>General Links</h3>
+                        <ul>
+                            <li><a href="https://services.uhcpindia.com/HomeU.aspx" target="_blank">Medvantage Insurance</a></li>
+                            <li><a href="https://time.gov/" target="_blank">NIST US Regional Timing</a></li>
+                            <li><a href="https://www.vista.adp.com/ESS4/ESSV5/dashboard" target="_blank">ADP Portal</a></li>
+                            <li><a href="https://techspot.comcast.com/techspot?id=techspot_mytechspot_tickets&is_new_order=true&table=x_mcim_it_service_case2&sys_id=a93019721b438990a904520b234bcbf7" target="_blank">My Tech Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-section">
+                        <h3>Ad Copy Links</h3>
+                        <ul>
+                            <li><a href="https://app.na3.teamsupport.com/login?ReturnUrl=%2f" target="_blank">Team Support</a></li>
+                            <li><a href="https://comcastcorp.sharepoint.com/sites/xGLinear?xsdata=MDV8MDF8fGQ0ZWUyODRlYzU2YzRkZTllNTE3MDhkYjI5Mjc0NmQ2fDkwNmFlZmU5NzZhNzRmNjViODJkNWVjMjA3NzVkNWFhfDB8MHw2MzgxNDkwMjA4NzIwMDg5ODN8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxNVFkzT1RNd05USTROakkzTmpzeE5qYzVNekExTWpnMk1qYzJPekU1T2pjeFlqZzFaV1ZsT0RnM05UUmxZV0ppT1RSbE1HSXdPREkxWlRjeU5UZ3pRSFJvY21WaFpDNTJNZz09fDk2ZDdlYzA4ZGY1MTRiYjRlNTE3MDhkYjI5Mjc0NmQ2fDgwMmM0N2FlMmM4YjQ0ODQ4MTA2NDlkYzA2Y2U0MDA2&sdata=cjhZU0o2NWwxZ3RPNldWMlZiNHZTcWV0YUFhVFZwZ3IvSGV4KzFIWkpKWT0%3d&ovuser=906aefe9-76a7-4f65-b82d-5ec20775d5aa%2chsubra154%40apac.comcast.com&OR=Teams-HL&CT=1679305290258&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzAyMTcwODAxNiIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3d%3d&SafelinksUrl=https%3a%2f%2fcomcastcorp.sharepoint.com%2fsites%2fxGLinear" target="_blank">xG linear Tool</a></li>
+                            <li><a href="https://inncreative.comcast.com/#/acw/dashboard" target="_blank">Inncreative ACW</a></li>
+                            <li><a href="https://efvcm.cable.comcast.com/acp#/" target="_blank">Ad Copy Wizard (ACp)</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="links-section">
+                        <h3>Retail Order Entry</h3>
+                        <ul>
+                            <li><a href="https://comcastcorp-my.sharepoint.com/:x:/g/personal/kramac466_apac_comcast_com/Efs3Vp8wqWlHqymLDhl9FbABn9-dEmb6JV5qHyC6DD-qaA?e=0AMGKm&ovuser=906aefe9-76a7-4f65-b82d-5ec20775d5aa%2Chsubra154%40apac.comcast.com&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNDA4MDIxMjAwOSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D" target="_blank">Track Force Tracker</a></li>
+                            <li><a href="https://comcastcorp.sharepoint.com/sites/TTOETeam/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fcomcastcorp%2Esharepoint%2Ecom%2Fsites%2FTTOETeam%2F%5Flayouts%2F15%2FDoc%2Easpx%3Fsourcedoc%3D%257b32d628fb%2D4788%2D43a0%2Da134%2Dbded81d8e4be%257d%26action%3Dview%26wd%3Dtarget%28Retail%2BStandard%2BOrder%2BEntry%2BProcess%2BGuide%2Eone%257c4e4613ad%2D7cd7%2D453b%2Dbf11%2Db3bbd52c0239%252fRetail%2BPolitical%2BOrder%2BProcessing%2BGuide%2B%2D%2BLinear%257cfe86e7b6%2Db74e%2D4898%2Dbcda%2D9e304a7ee610%252f%29%26wdorigin%3DNavigationUrl%26ovuser%3D906aefe9%2D76a7%2D4f65%2Db82d%2D5ec20775d5aa%252chsubra154%2540apac%2Ecomcast%2Ecom%26OR%3DTeams%2DHL%26CT%3D1725372265337%26clickparams%3DeyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNDA4MDIxMjAwOSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%253d%253d%26CID%3D04a64ca1%2D90ca%2D6000%2D64c7%2Ddd102449c784%26cidOR%3DSPO&correlation=04a64ca1%2D50ef%2D6000%2D5658%2D17ca181af248&Type=item&name=3d890b72%2D03ba%2D4665%2Daede%2Dc31229adaf66&listItemId=183&listItemUniqueId=32d628fb%2D4788%2D43a0%2Da134%2Dbded81d8e4be" target="_blank">Documentation for ROE process</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-section">
+                        <h3>Enterprise</h3>
+                        <ul>
+                            <li><a href="https://login.microsoftonline.com/906aefe9-76a7-4f65-b82d-5ec20775d5aa/oauth2/authorize?client_id=1f0550bf-8e5e-4bc3-a519-459857e2f1dc&redirect_uri=https%3a%2f%2fonetimprod.cable.comcast.com%2fOneTIMMVC%2fOrderStatus%2fAuthenticated&response_type=code&scope=openid+profile+offline_access&code_challenge=yGDXhfcPpETZjXGFbNWV41ESJdFH3822apVq8NXrQ5w&code_challenge_method=S256&state=OpenIdConnect.AuthenticationProperties%3d4ENSwtISL0KzVIRMK-WKqgq5oVArTRga3p8-ZCcyH-ZbqrizIg1XuRWoFLE89a32eS3vMl4ZeDNJHnMrFoWPveSW2t7bSnRyKitH7EwQSWZSlRVoi_FUVzSPUAfZ-mc6naCiJSe59nWRxOaVfpoZ2h_Hf_UyVHW2Iwya0JAiOSfOOGjA6wDFRX_Sq7bICRNgfh4ZNtuRtHNlv_dpdzZsKGdbMnvIy8sZ1AIHboGd9aT0XIatgJ79bjYYTmZTM0lrGR3PXDFaMLvtxbGidE2QYqwPRhy2lJfTE2rQfezUIydH22L-4EvQBF1KNi5qG4qQTcplyGDxScPMFV1VMb9yj_f45Xb6h4IwvBCWoNx6-vWwOt1i6Tzvu1X7pImJ5fP4&response_mode=form_post&nonce=638609691747902546.YWMzZDEyMTQtNjQ4Mi00MWIyLWE2NTMtZmQ1NzYxNjJlYzQ4MGY0MzdjOTMtNGRjNC00NmM1LWFmNzYtYWVlNzc5MTlhZTc3&x-client-SKU=ID_NET461&x-client-ver=5.3.0.0&sso_nonce=AwABEgEAAAACAOz_BQD0_2AXkAJ7FtIcaGG4MhlzFuMlGen6zEKfDXeVWHGP1Zo2Y-qqSWhHHl8cxism6r3Um9mpEHKpM1GO5DozooWlCgEgAA&client-request-id=b19a5798-5b14-4921-9764-e516ffd67a8a&mscrid=b19a5798-5b14-4921-9764-e516ffd67a8a" target="_blank">One Tim</a></li>
+                            <li><a href="https://comcastcorp-my.sharepoint.com/:x:/g/personal/skabil972_apac_comcast_com/EaESyeM_8HNBoAHAXvEv2wEBxbyCF-QWHXt0fWXfPyI2nw?e=iVgvFj" target="_blank">Enterprise Tracker</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="updates" class="tab-content">
+        <div class="updates-section">
+            <h3>Updates</h3>
+            <ul id="update-list" class="update-list">
+                <li>
+                    <h1>Ad copy update</h1>
+                    <a id="pdf-link" href="C:\Users\hsubra154\Documents\ACW Validation Checkpoints One Sheet 1.pdf" target="_blank" download>
+                        View and Download the PDF Document
+                    </a>
+                </li>
+                <!-- Other static updates can go here -->
+            </ul>
+            <input type="file" id="file-input" />
+            <button onclick="uploadFile()">Upload File</button>
+        </div>
+    </div>
+            <div id="syscodes" class="tab-content">
+                <h2>Master Syscode</h2>
+                <div class="App">
+                    <div class="inp">
+                        <div class="input-class">
+                            <div class="inp_headen">
+                                <label for="headen">Headend</label>
+                                <input type="text" id="headen" class="input-field">
+                            </div>
+                            <div class="inp_headen">
+                                <label for="sys">Syscodes</label>
+                                <input type="text" id="sys" class="input-field">
+                            </div>
+                        </div>
+                        <button id="submit">Submit</button>
+                        <button id="clear">Clear</button>
+                    </div>
+                    <div>
+                        <table id="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Market Abbreviation</th>
+                                    <th>Headend</th>
+                                    <th>Syscode</th>
+                                    <th>Zone</th>
+                                    <th>XG Database</th>
+                                    <th>TIME ZONE</th>
+                                    <th>Retail Zones Per IC</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <!-- Timer Display -->
+            <div id="timer-container" class="timer-container">
+                <p id="timer">00:00:00</p>
+            </div>
+
+            <p>&copy; effectv Users. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="home.js" ></script>
+    <script src="sysData.js" ></script>
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById('file-input');
+            const file = fileInput.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                
+                // Create a new list item
+                const newItem = document.createElement('li');
+                newItem.innerHTML = `
+                    <a href="${fileURL}" target="_blank" download>
+                        View and Download Uploaded File: ${file.name}
+                    </a>
+                `;
+                
+                // Append new item to the list
+                const updateList = document.getElementById('update-list');
+                updateList.appendChild(newItem);
+            } else {
+                alert('Please select a file to upload.');
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Select the "Statsauto" link in the navigation menu
+    const statsAutotool = document.querySelector('nav ul li a[href="statsauto.html"]');
+
+    // Check if the link exists
+    if (statsAutotool) {
+        // Add a click event listener to the "Statsauto" link
+        statsAutotool.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            window.location.href = 'statsauto.html'; // Redirect to stats.html
+        });
+    }
+});
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Select the "Supervisorview" link in the navigation menu
+    const supervisorview = document.querySelector('nav ul li a[href="supervisor-view.html"]');
+
+    // Check if the link exists
+    if (supervisorview) {
+
+        supervisorview.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'supervisor-view.html';
+        });
+    }
+});
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Select the "Stats" link in the navigation menu
+    const statsLink = document.querySelector('nav ul li a[href="stats.html"]');
+
+    // Check if the link exists
+    if (statsLink) {
+        statsLink.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            window.location.href = 'stats.html';
+        });
+    }
+});
+    </script>
+    <script>
+        // Select the "process" link in the navigation menu
+        document.addEventListener('DOMContentLoaded', () => {
+        const redirectButton = document.querySelector('nav ul li a[href="process.html"]');
+        if (redirectButton) {
+        redirectButton.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            window.location.href = 'process.html'; 
+        });
+    }
+});
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="attendance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'attendance.html'; 
+    });
+}
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="leave.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'leave.html'; 
+    });
+}
+});
+
+</script>
+<script>
+   function openTab(tabId) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    const tabs = document.querySelectorAll('.tab-button');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    document.querySelector(`.tab-button[onclick="openTab('${tabId}')"]`).classList.add('active');
+}
+
+// Initialize the first tab as active
+document.addEventListener('DOMContentLoaded', () => {
+    openTab('links'); // or whichever tab you want to be active by default
+});
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const statusButton = document.getElementById('status-button');
+    const statusMenu = document.getElementById('status-menu');
+    const statusIcon = document.getElementById('status-icon');
+    // Retrieve status from localStorage and apply it
+    const savedStatus = localStorage.getItem('status');
+            if (savedStatus) {
+                updateStatus(savedStatus);
+            }
+
+    statusButton.addEventListener('click', () => {
+        statusMenu.style.display = statusMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    statusMenu.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('status-option')) {
+            const status = event.target.getAttribute('data-status');
+            updateStatus(status);
+        }
+    });
+
+    function updateStatus(status) {
+        const statusClasses = ['available', 'away', 'busy', 'do-not-disturb', 'offline'];
+        statusIcon.classList.remove(...statusClasses);
+        statusIcon.classList.add(status);
+        statusButton.innerHTML = `<i class="fas fa-circle status-icon ${status}"></i> ${capitalize(status)}`;
+        statusMenu.style.display = 'none';
+        localStorage.setItem('status', status); // Save status to localStorage
+    }
+
+    function capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).replace('-', ' ');
+    }
+});
+
+</script>
+<script>
+    // Select the "Attendance" link in the navigation menu
+    document.addEventListener('DOMContentLoaded', () => {
+    const redirectButton2 = document.querySelector('nav ul li a[href="performance.html"]');
+    if (redirectButton2) {
+    redirectButton2.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        window.location.href = 'performance.html'; 
+    });
+}
+});
+
+</script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const timerDisplay = document.getElementById('timer');
+    const logoutButton = document.getElementById('logoutButton');
+    const startTimeKey = 'timerStartTime';
+    let timerInterval;
+
+    function initializeStartTime() {
+        let storedStartTime = localStorage.getItem(startTimeKey);
+        if (!storedStartTime) {
+            storedStartTime = new Date().getTime();
+            localStorage.setItem(startTimeKey, storedStartTime);
+        }
+        return parseInt(storedStartTime, 10);
+    }
+
+    function resetStartTime() {
+        localStorage.removeItem(startTimeKey);
+    }
+
+    const startTime = initializeStartTime();
+
+    function formatTime(ms) {
+        const seconds = Math.floor(ms / 1000);
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        const elapsed = now - startTime;
+        timerDisplay.textContent = formatTime(elapsed);
+    }
+
+    function startTimer() {
+        timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+    }
+
+    function handleLogout() {
+        stopTimer();
+        resetStartTime();
+        alert('Logged out and timer stopped');
+        // Redirect to login or other page if needed
+        // window.location.href = 'login.html'; // Example
+    }
+
+    startTimer();
+    logoutButton.addEventListener('click', handleLogout);
+});
+       
+</script>
+</body>
+</html>
